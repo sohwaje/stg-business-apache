@@ -1,0 +1,10 @@
+---
+- name: apache deployment playbook
+  hosts: "{{ hosts }}"      # Inventory hosts group / server to act on
+  become: yes
+  remote_user:  "{{ remote_user }}"         # Update username for remote server
+  vars:
+    apache_dir: "{{ apache_dir }}"
+    remote_user: "{{ remote_user }}"
+  roles:
+    - apache

@@ -1,4 +1,4 @@
-# - name: restart tomcat
-#   service:
-#     name: "{{ instance }}"
-#     state: restarted
+- name: restart apache
+  service:
+    name: "apache.service"
+    state: restarted

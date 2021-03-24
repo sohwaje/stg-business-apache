@@ -1,3 +1,9 @@
+- name: Copy apache service file
+  template:
+    src: templates/apache.service
+    dest: "/etc/systemd/system/apache.service"
+  when: ansible_service_mgr == "systemd"
+  
 - name: Copy httpd-vhosts.conf ===> {{ apache_dir }}/conf/extra
   template:
     src: templates/httpd-vhosts.conf

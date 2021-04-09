@@ -14,8 +14,8 @@
 
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
-    src: templates/httpd-vhosts.conf
-    dest: "{{ apache_dir }}/conf"
+    src: templates/workers.properties
+    dest: "{{ apache_dir }}/conf/"
     owner: root
     group: root
     mode: '0644'

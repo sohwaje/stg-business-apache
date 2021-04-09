@@ -7,7 +7,7 @@
 - name: Copy httpd-vhosts.conf ===> {{ apache_dir }}/conf/extra
   template:
     src: templates/httpd-vhosts.conf
-    dest: "{{ apache_dir }}/conf/extra/httpd-vhosts.conf"
+    dest: "{{ apache_dir }}/conf/extra/"
     owner: root
     group: root
     mode: '0644'
@@ -15,7 +15,7 @@
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
     src: templates/workers.properties
-    dest: "{{ apache_dir }}/conf/workers.properties"
+    dest: "{{ apache_dir }}/conf/"
     owner: root
     group: root
     mode: '0644'

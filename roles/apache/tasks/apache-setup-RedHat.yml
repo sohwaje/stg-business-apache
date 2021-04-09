@@ -16,10 +16,12 @@
 
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
-    src: templates/workers.properties
+    src: "{{ item }}"
     remote_src: yes
     dest: /home/sigongweb/apache/conf/workers.properties
     owner: root
     group: root
     mode: '0644'
+    loop:
+      - workers.properties
   notify: restart apache

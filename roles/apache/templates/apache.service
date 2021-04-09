@@ -1,6 +1,7 @@
 [Unit]
 Description=The Apache HTTP Server
 
+# service
 [Service]
 Type=forking
 #EnvironmentFile={{ apache_dir }}/bin/envvars

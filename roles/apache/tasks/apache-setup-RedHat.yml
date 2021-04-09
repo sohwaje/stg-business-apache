@@ -1,12 +1,14 @@
 - name: Copy apache service file
   template:
     src: templates/apache.service
+    remote_src: yes
     dest: "/etc/systemd/system/apache.service"
   when: ansible_service_mgr == "systemd"
 
 - name: Copy httpd-vhosts.conf ===> {{ apache_dir }}/conf/extra
   template:
     src: templates/httpd-vhosts.conf
+    remote_src: yes
     dest: "{{ apache_dir }}/conf/extra/httpd-vhosts.conf"
     owner: root
     group: root
@@ -15,6 +17,7 @@
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
     src: templates/workers.properties
+    remote_src: yes
     dest: "{{ apache_dir }}/conf/workers.properties"
     owner: root
     group: root

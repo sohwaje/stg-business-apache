@@ -10,17 +10,17 @@
     src: templates/httpd-vhosts.conf
     remote_src: yes
     # dest: "/home/sigongweb/apache/conf/extra/httpd-vhosts.conf"
-    dest: "/tmp/httpd-vhosts.conf"
+    dest: "{{ apache_dir }}/httpd-vhosts.conf"
     owner: root
     group: root
     mode: '0644'
 
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
-    src: "{{ item }}"
+    src: templates/workers.properties
     remote_src: yes
     # dest: "/home/sigongweb/apache/conf/workers.properties"
-    dest: "/tmp/workers.properties"
+    dest: "{{ apache_dir }}/workers.properties"
     owner: root
     group: root
     mode: '0644'

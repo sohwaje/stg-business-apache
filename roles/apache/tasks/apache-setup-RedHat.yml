@@ -22,6 +22,4 @@
     owner: root
     group: root
     mode: '0644'
-    loop:
-      - workers.properties
   notify: restart apache

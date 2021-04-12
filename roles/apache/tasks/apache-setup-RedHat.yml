@@ -7,21 +7,14 @@
 
 - name: Copy httpd-vhosts.conf ===> {{ apache_dir }}/conf/extra
   template:
-    src: httpd-vhosts.conf
+    src: templates/httpd-vhosts.conf
     remote_src: yes
-    # dest: "/home/sigongweb/apache/conf/extra/httpd-vhosts.conf"
     dest: "{{ apache_dir }}/conf/extra/httpd-vhosts.conf"
-    owner: root
-    group: root
-    mode: '0644'
+
 
 - name: Copy workers.properties ==> {{ apache_dir }}/conf
   template:
-    src: workers.properties
+    src: templates/workers.properties
     remote_src: yes
-    # dest: "/home/sigongweb/apache/conf/workers.properties"
     dest: "{{ apache_dir }}/conf/workers.properties"
-    owner: root
-    group: root
-    mode: '0644'
   # notify: restart apache
